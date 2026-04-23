@@ -5,10 +5,42 @@
 
 ## Usage Guide
 
+The app is split into two areas: the left panel handles fetching and download controls, while the right panel shows metadata, formats, subtitles, playlist entries, logs, and raw yt-dlp output.
+
+### 1. Fetch a video or playlist
+Paste a YouTube URL into the left panel and click **Fetch Info**. Once the request completes, the right panel opens on the Metadata tab.
+
+![Metadata tab](docs/images/gui-metadata-tab.png)
+
+### 2. Review the fetched information
+Use the tabs on the right to switch between:
+
+- Metadata: thumbnail, title, channel, duration, view count, upload date, and description.
+- Formats: the available format IDs, codecs, resolutions, and file sizes.
+- Download Log: live yt-dlp output while a download is running.
+- Subtitles: lyric and caption tools, language selection, and fetched subtitle text.
+- Playlist: playlist entries and playlist range controls when the URL is a playlist.
+- Raw Output: the raw JSON returned by yt-dlp.
+
+![Formats tab](docs/images/gui-formats-tab.png)
+![Subtitles tab](docs/images/gui-subtitles-tab.png)
+![Raw output tab](docs/images/gui-raw-output-tab.png)
+
+### 3. Choose a download preset
+Select a preset in the left panel. Use **Custom Format ID** if you want to enter an advanced yt-dlp format expression such as `137+140`.
+
+### 4. Configure subtitle options
+Expand **Advanced Download Options** to include manual subtitles, auto-generated subtitles, subtitle languages, and the subtitle output format.
+
+### 5. Start or cancel the download
+Click **Start Download** to begin. The progress bar, speed, ETA, file size, and command log update while the job is running. Use **Cancel Download** to stop an active download.
+
+### 6. Download a playlist range
+If the URL is a playlist, open the Playlist tab. Set the start and end index, then click **Download Range**. Set **End Index** to `0` to download the full playlist.
 
 ## Documentation
 
-This project includes a **Software Design Document (SDD)** that covers the system architecture, component design, data flow, and technical decisions:
+The GUI walkthrough screenshots are stored in [docs/images](docs/images). The main app entry point is [youtube_downloader_gui/youtube_downloader_gui.py](youtube_downloader_gui/youtube_downloader_gui.py), and the left and right panel components live under [youtube_downloader_gui/components](youtube_downloader_gui/components).
 
 ## Getting Started
 
