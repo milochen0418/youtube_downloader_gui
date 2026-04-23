@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "youtube-downloader-gui"
+version = "0.1.0"
+description = "A Reflex-based yt-dlp web GUI."
+authors = ["milochen0418 <milo_chen@mail2000.com.tw>"]
+readme = "README.md"
+packages = [{ include = "youtube_downloader_gui" }]
+
+[tool.poetry.dependencies]
+python = "~3.11"
+reflex = "0.8.26"
+yt-dlp = "*"
+playwright = "*"
+
+[build-system]
+requires = ["poetry-core>=1.8.1"]
+build-backend = "poetry.core.masonry.api"
